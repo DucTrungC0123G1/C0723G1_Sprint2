@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "../../img/logo/T_T-removebg-preview.png"
+import logo from "../../img/logo/T_T-removebg-preview.png";
 
-const HomeHeader = () => {
+export default function HeaderAdmin() {
     return (
         <>
             {/*Navigation*/}
@@ -52,18 +52,23 @@ const HomeHeader = () => {
                                 <li><a href="#" className="nav-link px-2 text-white">Liên Hệ</a></li>
                             </ul>
 
-                            <div className="text-end">
-                                <button type="button" className="btn btn-success"><a className="link-light" href="/cart"><i className="fas fa-shopping-cart"></i></a></button>
+                            <form style={{width:"20%",paddingTop:"8px"}} className="input-group mb-3 mb-md-2 " role="search">
+                                <input  type="search" className="form-control form-control-dark text-bg-light" placeholder="Search..." aria-label="Search"></input>
+                                <button type="button" className="btn btn-outline-light me-2"><i class="fas fa-search"></i></button>
+                            </form>
 
-                            </div>
-                            <div>
-                                <button type="button" className="btn btn-success"><a className="link-light" href="/login"><i className="fas fa-sign-in-alt"></i></a></button>
-                            </div>
+                            {/*<div className="text-end">*/}
+                            {/*    <button type="button" className="btn btn-success"><a className="link-light" href="/cart"><i className="fas fa-shopping-cart"></i></a></button>*/}
+
+                            {/*</div>*/}
+                            {/*<div>*/}
+                            {/*    <button type="button" className="btn btn-success"><a className="link-light" href="/login"><i className="fas fa-sign-in-alt"></i></a></button>*/}
+                            {/*</div>*/}
                         </div>
                     </div>
                 </header>
             </nav>
+
         </>
     )
-};
-export default HomeHeader;
+}

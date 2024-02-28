@@ -12,16 +12,16 @@ import org.springframework.validation.Validator;
 @AllArgsConstructor
 public class LoginDTO implements Validator {
 
-    @NotBlank(message = "Tên tài khoản không được để trống.")
-    @Pattern(regexp = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$",message = "Tên tài khoản sai định dạng.")
-    @Size(min = 15,message = "Tên tài khoản phải từ 15 kí tự")
-    @Size(max = 40,message = "Tên tài khoản phải ít hơn hoặc bằng 45 ký tự")
+    @NotBlank(message = "User Name không được để trống")
+    @Pattern(regexp = "^\\w+$", message = "User Name không  đúng định dạng")
+    @Size(min = 8, message = "User phải từ 8 kí tự.")
+    @Size(max = 20, message = "User phải ít hơn 20 kí tự.")
     private String userName;
 
     @NotBlank(message = "Mật khẩu không được để trống.")
-    @Pattern(regexp = "^\\w+$",message = "Mật khẩu không chứa ký tự đặc biệt.")
-    @Size(min = 8,message = "Mật khẩu phải từ 8 kí tự")
-    @Size(max = 20,message = "Mật khẩu phải ít hơn hoặc bằng 20 ký tự")
+    @Pattern(regexp = "^\\w+$", message = "Mật khẩu không không đúng định dạng.")
+    @Size(min = 8, message = "Mật khẩu phải từ 8 kí tự.")
+    @Size(max = 20, message = "Mật khẩu phải ít hơn hoặc bằng 20 ký tự.")
     private String password;
 
     public String getUserName() {

@@ -29,6 +29,8 @@ public class AccountDTO implements Validator {
     @Size(max = 20, message = "Mật khẩu phải ít hơn hoặc bằng 20 ký tự.")
     private String password;
 
+    private int idRole;
+
     @Override
     public boolean supports(Class<?> clazz) {
         return false;

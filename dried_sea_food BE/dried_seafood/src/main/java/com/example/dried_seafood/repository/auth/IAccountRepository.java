@@ -16,12 +16,12 @@ public interface IAccountRepository extends JpaRepository<Accounts,Long> {
 
     @Transactional
     @Modifying
-    @Query(value = "INSERT INTO accounts (userName,password)" +
+    @Query(value = "INSERT INTO accounts (user_name,password)" +
             " VALUES ( :#{#accounts.userName},:#{#accounts.password})",nativeQuery = true)
     void addAccount(@Param("accounts") Accounts accounts);
 
 
-    @Query(value = "SELECT accounts.* FROM accounts WHERE userName = :userName",nativeQuery = true)
+    @Query(value = "SELECT accounts.* FROM accounts WHERE user_name = :userName",nativeQuery = true)
     Accounts getAccountByUserName(@Param("userName") String userName);
 
 
@@ -29,6 +29,6 @@ public interface IAccountRepository extends JpaRepository<Accounts,Long> {
     @Modifying
     @Query(value = "INSERT INTO account_role (id_account,id_role) " +
             "VALUES ( :idAccount, :idRole ) ", nativeQuery = true)
-    void addAccountRole(@Param("idAccount") int idAccount,@Param("idRole") int idRole);
+    void addAccountRole(@Param("idAccount") int idAccount,@Param("idRole") Integer idRole);
 
 }
